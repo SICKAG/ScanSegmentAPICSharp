@@ -1,0 +1,12 @@
+# Default steps for all jobs
+image: rdswe-public-docker-local.deagxartifactory.sickcn.net/software/dotnet/sdk:8.0
+
+#Default steps to be done during each job
+default:
+  tags:
+    - k8s-baremetal-linux
+
+unit-Test:
+  stage: test
+  script:
+    - dotnet test
